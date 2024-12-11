@@ -36,6 +36,16 @@ function App() {
     setTasks(newTasks);
   }
 
+  function onAddTaskSubmit(title, description) {
+    const newTask = {
+      id: tasks.length + 1,
+      title: title,
+      description: description,
+      finished: false,
+    };
+    setTasks([...tasks, newTask]);
+  }
+
   return (
     <div className="w-screen h-screen bg-slate-700 flex justify-center p-6">
       <div className="w-[500px]">
@@ -48,7 +58,7 @@ function App() {
             onTaskClick={onTaskClick}
             onDeleteTaskClick={onDeleteTaskClick}
           />
-          <AddTask />
+          <AddTask onAddTaskSubmit={onAddTaskSubmit} />
           <h1>To-do: excluídos</h1>
         </div>
       </div>
