@@ -22,7 +22,14 @@ function AddTask({ onAddTaskSubmit }) {
       ></input>
       <button
         className="bg-slate-500 px-4 py-4 rounded-md font-medium"
-        onClick={() => onAddTaskSubmit(title, description)}
+        onClick={() => {
+          if (!title.trim() || !description.trim()) {
+            return alert("Please, fill in the blanks.");
+          }
+          onAddTaskSubmit(title, description);
+          setTitle = "";
+          setDescription = "";
+        }}
       >
         Add Task
       </button>

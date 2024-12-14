@@ -60,6 +60,7 @@ function App() {
           />
           <AddTask onAddTaskSubmit={onAddTaskSubmit} />
           <h1>To-do: excluídos</h1>
+          <h1>To-do: programação por data</h1>
         </div>
       </div>
     </div>
